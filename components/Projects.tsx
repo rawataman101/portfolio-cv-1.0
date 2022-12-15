@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Project } from "../typings";
 import { urlFor } from "../sanity";
+import { SocialIcon } from "react-social-icons";
 
 type Props = {
   projects: Project[];
@@ -26,10 +27,11 @@ function Projects({ projects }: Props) {
         className="relative flex overflow-x-scroll 
       overflow-y-hidden snap-x snap-mandatory z-20 w-full
       scrollbar-thin scrollbar-track-gray-400/2 
-      scrollbar-thumb-[#F7AB0A]/80 h-full mb-[150px]"
+      scrollbar-thumb-[#F7AB0A]/80 h-full mb-[120px]"
       >
         {projects.map((project, i) => (
           <div
+            key={project._id}
             className="w-screen flex-shrink-0 snap-center
           flex flex-col sapce-y-5 items-center justify-center p-20
           md:p-44 md:mt-20 h-screen"
@@ -50,6 +52,25 @@ function Projects({ projects }: Props) {
                 </span>
                 : {project?.title}
               </h4>
+              {/* git link */}
+              <div className="flex items-center justify-center">
+                <SocialIcon
+                  className="cursor-pointer"
+                  url={project?.linkToBuild}
+                  network="telegram"
+                  fgColor="gray"
+                  bgColor="transparent"
+                />
+                {/* vertical line */}
+                <div className="vl" />
+                <SocialIcon
+                  className="cursor-pointer"
+                  url={project?.githubLink}
+                  network="github"
+                  fgColor="gray"
+                  bgColor="transparent"
+                />
+              </div>
               {/* technologies */}
               <div className="flex items-center justify-center space-x-2">
                 {project?.technologies.map((tech) => (
@@ -61,7 +82,6 @@ function Projects({ projects }: Props) {
                   />
                 ))}
               </div>
-
               <p className="text-lg text-center md:text-left">
                 {project?.summary}
               </p>

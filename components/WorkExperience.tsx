@@ -32,7 +32,7 @@ function WorkExperience({ experiences }: Props) {
       scrollbar-thin scrollbar-track-gray-400/2 scrollbar-thumb-[#F7AB0A]/80"
       >
         {/* cards */}
-        {experiences.map((exp) => (
+        {experiences?.map((exp) => (
           <ExperienceCard key={exp._id} experience={exp} />
         ))}
       </div>

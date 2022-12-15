@@ -47,7 +47,7 @@ export interface Experience extends SanityBody {
   dateEnded: date;
   isCurrentlyWorkingHere: boolean;
   jobTitle: string;
-  points: string;
+  points: string[];
   technologies: Technology[];
 }
 
@@ -57,6 +57,7 @@ export interface Project extends SanityBody {
   image: Image;
   summary: string
   linkToBuild: string;
+  githubLink:string
   technologies: Technology[];
 }
 export interface Social extends SanityBody {

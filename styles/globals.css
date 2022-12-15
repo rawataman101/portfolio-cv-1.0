@@ -11,4 +11,8 @@
     border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 
     transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40;
   }
+
+  .vl {
+    @apply border border-l-4 border-amber-500 h-[30px] ml-3 mr-3 top-0;
+  }
 }

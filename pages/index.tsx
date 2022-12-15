@@ -29,7 +29,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
     overflow-y-scroll z-0 overflow-x-hidden scrollbar scrollbar-track-gray-400/2 scrollbar-thumb-[#F7AB0A]/80"
     >
       <Head>
-        <title>Aman Portfolio 1.0</title>
+        <title>{pageInfo?.name} - Portfolio 1.0</title>
       </Head>
       <Header socials={socials} />
       <section id="hero" className="snap-start">
